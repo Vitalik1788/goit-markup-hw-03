@@ -28,6 +28,7 @@ ul, ol { margin-top: 0;
 
 img {
     display: block;
+    max-width: 100%;
 }
 
 button {
@@ -49,8 +50,7 @@ button {
     margin-right: auto;
     width: 1158px;
     padding-left: 15px;
-    padding-right: 15px;
-    outline: 5px solid tomato;
+    padding-right: 15px;    
 }
 
 .section {
@@ -69,7 +69,10 @@ body {font-family: "Roboto", sans-serif;
 /* header main page */
 
 .main-header {background-color: var(--simple-white);
-    }
+    border-bottom: 5px solid rgba(46, 47, 66, 0.16);
+}
+
+   
 .header-container {display: flex;}
 
 .nav-section, .contacts-list, .nav-list {
@@ -173,24 +176,36 @@ body {font-family: "Roboto", sans-serif;
 
 /* main page section 2 */
 
-.benefits {background-color: var(--simple-white);}
+.benefits {background-color: var(--main-white-bgc)}
 
 
 .benefits-heading {
     padding-bottom: 8px;
+
     font-weight: 600;
     font-size: 20px;
     line-height: 1.2;
     letter-spacing: 0.02em;
     color: var(--dark-navi-color);}
 
+.benefits-list {
+    display: flex;}   
+    
+.benefits-list .benefits-item + .benefits-item {
+    margin-left: 24px;}   
+
 .benefits-link {
+    width: 264px;
     line-height: 1.5;
     letter-spacing: 0.02em;}
+
+
 
 /* /main page section 2 */
 
 /* main page section 3 */
+
+.services {background-color: var(--main-white-bgc);}
 
 .services-list {
     display: flex;
@@ -259,8 +274,9 @@ body {font-family: "Roboto", sans-serif;
 
 .logo-footer {
     display: inline-block;
-    padding-top: 100px;
-    padding-bottom: 16px;
+    margin-top: 100px;
+    margin-bottom: 16px;
+
     font-family: "Raleway", sans-serif;
     font-weight: 800;
     font-size: 18px;
@@ -272,6 +288,7 @@ body {font-family: "Roboto", sans-serif;
 
 .text-footer {
     padding-bottom: 100px;
+
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: var(--accent-color);
@@ -279,14 +296,26 @@ body {font-family: "Roboto", sans-serif;
 
 /* portfolio page - main */
 
+
 /* buttons filter */
 .main-portfolio {
     background-color: var(--main-white-bgc);
+    border-bottom: color: rgba(255, 255, 255, 1);}
+
+.btn-list {    
+    padding-top: 96px;
+    margin-bottom: 72px;
+    display: flex;
+    justify-content: center;}
+
+.btn-list .btn-item + .btn-item {
+    margin-left: 24px;
 }
 
-.work-list {padding-top: 72px;}
-
 .btn-link {
+    padding: 12px 24px;
+    border-radius: 4px;
+
     background-color: var(--accent-color);
     color: var(--primary-brand-color);
     font-family: inherit;
@@ -304,16 +333,45 @@ body {font-family: "Roboto", sans-serif;
 /* /buttons filter */
 
 /* Works cards */
+
+.work-list {
+    display: flex;
+    flex-wrap: wrap; 
+    margin-right: -24px;   
+    }
+
+.work-item {
+    flex-basis: calc(100% / 3 - 24px);
+    margin-right: 24px;            
+    margin-bottom: 48px;
+    border-bottom: 0.5px solid rgba(244, 244, 253, 1);
+    }
+
+.work-list .work-item:nth-child(3n) {
+    margin-right: 0;
+}
+
+.work-item:nth-last-child(-n + 3) {
+    margin-bottom: 120px;}
+
+ .works-card {margin-bottom: 32px;}    
+    
+
 .works-heading {
-    padding-top: 32px;
-    padding-bottom: 8px;
+    padding-left: 16px;
+    margin-bottom: 8px;
+    
     color: var(--dark-navi-color);
     font-weight: 600;
     font-size: 20px;
     line-height: 1.2;
     letter-spacing: 0.02em;}
 
+
 .work-text {
+    padding-left: 16px;
+    padding-bottom: 32px;
+
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: var(--slate-text-color);}
